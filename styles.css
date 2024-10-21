@@ -1,0 +1,385 @@
+body {
+    font-family: 'Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Navbar Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #08979d, #ccabd8); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 40px; /* Adjust the size of the logo */
+    height: auto;
+}
+
+.nav-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align items horizontally */
+    margin-left: 20px; /* Add some space between the logo and navigation */
+}
+
+.nav-container h2 {
+    margin-bottom: 10px; /* Add some space below the headings */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 10px;
+    position: relative; /* Necessary for the underline animation */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect: Change text color, background, and slight scaling */
+nav ul li a:hover {
+    color: #f4f4f9;
+    background-color: rgba(255, 255, 255, 0.2); /* Add a subtle background on hover */
+    border-radius: 5px; /* Smooth border */
+    transform: scale(1.05); /* Slightly scale the link */
+}
+
+/* Optional: Underline animation effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f4f4f9;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to make the text stand out */
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1; /* Ensures the overlay content is above the background image */
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #08979d; /* Teal primary color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #076a6d; /* Darker teal on hover */
+}
+
+/* Services Section */
+.services-section {
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #08979d; /* Same color as your navbar */
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.service-card {
+    background-color: #cca3ff;
+    border: 1px solid #666;
+    border-radius: 15px 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Start with a slide down */
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.service-card img {
+    width: 65%;
+    border-radius: 10px;
+}
+
+.service-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.service-card p {
+    color: white;
+    font-size: 1rem;
+}
+
+/* Footer Section */
+.footer {
+    background: linear-gradient(to right, #08979d, #ccabd8); 
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin-bottom: 30px;
+    gap: 40px; /* Spacing between sections */
+}
+
+.logo-container {
+    flex: 1;
+    min-width: 200px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons img {
+    width: 20px;  /* Adjust width to make icons smaller */
+    height: 20px; /* Adjust height to match width */
+    transition: transform 0.2s; /* Optional: add a hover effect */
+}
+
+.social-icons li {
+    margin-right: 8px; /* Adjust spacing between icons */
+}
+
+.social-icons li:hover img {
+    transform: scale(1.1); /* Optional: slightly enlarge on hover */
+}
+
+.footer-columns {
+    display: flex;
+    gap: 60px; /* Space between menu and links sections */
+    flex: 1;
+    min-width: 300px; /* Prevent sections from collapsing on small screens */
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin: 5px 0;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-bottom {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between; /* Push elements to opposite sides */
+    align-items: center; /* Vertically align the text and links */
+    padding: 10px 0; /* Optional: Add spacing around the footer-bottom */
+    padding-top: 20px; 
+    border-top: 1px solid #ddd;
+    flex-wrap: wrap; /* Ensure items wrap on small screens */
+    gap: 10px; /* Space between items when they wrap */
+}
+
+.footer-bottom p {
+    margin: 0; /* Remove default margin for consistent alignment */
+}
+
+.footer-bottom-nav {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align list items horizontally */
+    gap: 15px; /* Space between list items */
+}
+
+.footer-bottom-nav li a {
+    text-decoration: none;
+    color: black; 
+}
+
+.footer-bottom-nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-10px); /* Hover effect: Move up and scale */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* When the scroll event triggers this class, make the card visible */
+.service-card.show {
+    opacity: 1; /* Fully visible */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .services-section {
+        padding: 30px; /* Reduced padding for smaller screens */
+    }
+
+    .services-section h2 {
+        font-size: 2rem; /* Slightly smaller heading on mobile */
+        margin-bottom: 30px; /* Reduced margin */
+    }
+
+    .services-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .service-card {
+        width: 90%; /* Make cards full width on mobile */
+        max-width: 350px; /* Limit the max width of cards */
+    }
+
+    .service-card img {
+        width: 80%; /* Adjust image size */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay h1 {
+        font-size: 2rem; /* Smaller text for the hero section */
+    }
+
+    .cta-btn {
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem; /* Smaller font size for headings */
+    }
+
+    .service-card p {
+        font-size: 0.9rem; /* Smaller font size for paragraphs */
+    }
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: flex-start; /* Align items to the left */
+        text-align: left;
+    }
+
+    .footer-bottom-nav {
+        justify-content: flex-start; /* Align navigation to the left */
+        margin-top: 10px; /* Add space between copyright and nav */
+    }
+
+    .footer-bottom-nav li {
+        margin: 5px 0; /* Add spacing between list items */
+    }
+}
+
+/* Media query for smaller phones */
+@media (max-width: 480px) {
+    .footer-bottom p {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .footer-bottom-nav li a {
+        font-size: 0.9rem; /* Adjust link size for smaller screens */
+    }
+}
