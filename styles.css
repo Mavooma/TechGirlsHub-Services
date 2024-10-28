@@ -164,7 +164,7 @@ nav ul li a:hover::after {
 }
 
 .services-section p {
-    margin-bottom: 40px; /* Add spacing below the paragraph */
+    margin-bottom: 40px; 
     font-size: 1.2rem; /* Optional: Adjust font size for the paragraph */
     color: #333; /* Change text color if needed */
 }
@@ -182,7 +182,7 @@ nav ul li a:hover::after {
     border-radius: 15px 50px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 250px; /* Fixed width for cards */
+    width: 240px; /* Fixed width for cards */
     text-align: center;
     padding: 20px;
     opacity: 0; /* Hidden initially */
